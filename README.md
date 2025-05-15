@@ -25,13 +25,19 @@ Este proyecto es una aplicación web con un backend desarrollado en **Node.js + 
 ## Cómo ejecutar el proyecto
 
 ### 1. Clonar el repositorio
+```bash
 git clone https://github.com/clarvid/construcci-n-de-api.git
+```
 
 ### 2. Instalar dependencias
+```bash
 npm install
+```
 
 ### 3. Iniciar el servidor
+```bash
 node app.js
+```
 
 ## Funcionalidades
 - Registro de usuario
