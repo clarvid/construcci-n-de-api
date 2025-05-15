@@ -1,1 +1,37 @@
-hi
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="contenedor__main">
+        <section class="contenedor__form">
+            <form class="form registro">
+                <h2 class="form__titulo">Registro</h2>
+                <div class="form__inputs">
+                    <input type="text" name="nombreR" id="nombreR" placeholder="Nombre" required>
+                    <input type="email" name="correoR" id="correoR" placeholder="Correo" required>
+                    <input type="password" name="contraseniaR" id="contraseniaR" placeholder="Contraseña" required>
+                </div>
+                <button type="submit">Registrarse</button>
+            </form>
+        </section>
+        <section class="contenedor__form">
+            <form class="form inicioSesion">
+                <h2 class="form__titulo">Inicio de sesion</h2>
+                <div class="form__inputs">
+                    <input type="email" name="correoS" id="correoS" placeholder="Correo" required>
+                    <input type="password" name="contraseniaS" id="contraseniaS" placeholder="Contraseña" required>
+                </div>
+                <button type="submit">Iniciar sesion</button>
+            </form>
+        </section>
+    </div>
+    
+
+    <script src="index.js" type="module"></script>
+</body>
+</html>
