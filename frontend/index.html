@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro</title>
+    <title>API</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="shortcut icon" href="./img/favicon-16x16.png" type="image/x-icon">
 </head>
 <body>
+    <button type="button" class="listadoUsuarios">Ver listado de usuarios registrados</button>
     <div class="contenedor__main">
-        <section class="contenedor__form">
-            <form class="form registro">
+        <section class="contenedor__form registro">
+            <form class="form form__registro">
                 <h2 class="form__titulo">Registro</h2>
                 <div class="form__inputs">
                     <input type="text" name="nombreR" id="nombreR" placeholder="Nombre" required>
@@ -19,8 +21,8 @@
                 <button type="submit">Registrarse</button>
             </form>
         </section>
-        <section class="contenedor__form">
-            <form class="form inicioSesion">
+        <section class="contenedor__form inicioSesion">
+            <form class="form form__inicioSesion">
                 <h2 class="form__titulo">Inicio de sesion</h2>
                 <div class="form__inputs">
                     <input type="email" name="correoS" id="correoS" placeholder="Correo" required>
@@ -29,9 +31,60 @@
                 <button type="submit">Iniciar sesion</button>
             </form>
         </section>
+        <section class="contenedor__saludo">
+            <div class="saludo_inicioSesion saludo">
+                <h3>¡Bienvenido de vuelta!</h3>
+                <p>Si ya tienes una cuenta, inicia de sesion para seguir disfrutando de los beneficios</p>
+                <button type="button" class="irAInicioDeSesion">Iniciar sesion</button>
+                
+            </div>
+            <div class="saludo_registro saludo">
+                <h3>¡Bienvenido!</h3>
+                <p>Si aun no tienes una cuenta, registrate para que goces de los beneficios que te podemos ofrecer</p>
+                <button type="button" class="irARegistro">Registrarse</button>
+            </div>
+            
+        </section>
     </div>
-    
 
+
+
+    <div class="modal">
+        <section class="modal_listado">
+            <button type="button" class="btnClose">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 64 64"
+                    width="50"
+                    height="50"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="4"
+                    >
+                    <!-- Círculo exterior -->
+                    <!-- <circle cx="32" cy="32" r="30" fill="#fff" stroke="#000" /> -->
+    
+                    <!-- Línea de la X -->
+                    <line x1="20" y1="20" x2="44" y2="44" stroke="#000" stroke-linecap="round" />
+                    <line x1="44" y1="20" x2="20" y2="44" stroke="#000" stroke-linecap="round" />
+                </svg>
+            </button>
+            <div class="cabecera_usuario">
+                <span>No°</span>
+                <span>Nombre</span>
+                <span>Correo</span>
+            </div>
+            <div class="modal_usuarios">
+            </div>
+        </section>
+    </div>
+    <template id="template">
+        <div class="contenedor__usuario">
+            <span class="item"></span>
+            <span class="nombre"></span>
+            <span class="correo"></span>
+        </div>
+    </template>
     <script src="index.js" type="module"></script>
 </body>
 </html>

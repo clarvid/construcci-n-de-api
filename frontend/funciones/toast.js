@@ -1,6 +1,7 @@
 export default function toast(mensaje, contenedor){
     const toastContenedor = document.createElement("div")
     toastContenedor.classList.add("toast")
+    // console.log(mensaje);
 
     if(mensaje === "Usuario registrado con éxito"){
         toastContenedor.innerHTML = `

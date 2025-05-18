@@ -8,6 +8,7 @@ html {
     box-sizing: border-box;
 }
 body{
+    position: relative;
     width: 100%;
     height: 100vh;
     display: flex;
@@ -27,7 +28,6 @@ body{
 .contenedor__form{
     width: 50%;
     height: 100%;
-    /* border: thin solid red; */
 }
 .form {
     width: 100%;
@@ -37,12 +37,6 @@ body{
     align-items: center;
     justify-content: space-evenly;
     background-color: white;
-}
-.form.inicioSesion{
-    transition: transform 0.4s ease;
-}
-.form.registro{
-    transition: transform 0.4s ease;
 }
 .form__titulo{
     width: 100%;
@@ -82,7 +76,68 @@ body{
     color: #26de6e;
     border: 1px solid #26de6e;
 }
+/* desplazamiento de paneles */
+.inicioSesion{
+    transform: translateX(-100%);
+}
+.contenedor__main.toggle .registro{
+    z-index: 997    ;
+    transform: translateX(100%);
+}
+.contenedor__main.toggle .inicioSesion{
+    transform: translateX(0);
+}
+/* Paneles de mensaje */
+.contenedor__saludo{
+    /* border: thin solid purple; */
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(100%);
+    background-color: #26de6e;
+}
+.saludo{
+    position: absolute;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1rem;
+}
+.saludo h3{
+    font-size: 1.6rem;
+}
+.saludo p{
+    font-size: 1.3rem;
+    padding: 0 1rem 0 2rem;
+}
+.saludo button{
+    width: 100px;
+    height: 25px;
+    background-color: rgb(255, 255, 255);
+    color: #35794f;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.saludo_inicioSesion {
+    transform:  translateX(100%);    
+}
+.contenedor__main.toggle .contenedor__saludo{
+    transform:  translateX(0);    
+    background-color: #73fea9;
 
+}
+.contenedor__main.toggle .contenedor__saludo .saludo_inicioSesion{
+    transform:  translateX(0);    
+}
+.contenedor__main.toggle .contenedor__saludo .saludo_registro{
+    transform:  translateX(-100%);    
+}
 /* toast */
 .toast {
     position: absolute;
@@ -95,8 +150,94 @@ body{
     align-items: center;
     padding: 0.5rem;
     background-color: white;
+    color: black;
+
 }
 .toast__info {
     margin-left: 1rem;
     font-size: 1.3rem;
+    color: black;
 }
+
+/* Ventana modal */
+.listadoUsuarios {
+    position: absolute;
+    top: 3vh;
+    right: 3vw;
+    width: 250px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: #26de6e;
+    cursor: pointer;
+}
+.modal{
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.60);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.modal_listado{
+    position: relative;
+    min-width: 550px;
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+.btnClose{
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+.modal_usuarios{
+    /* border: thin solid; */
+    width: 70%;
+    height: 70%;
+}
+.contenedor__usuario{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1rem;
+    font-size:1.3rem;
+    padding: 0.5rem;
+}
+.cabecera_usuario{
+       width: 70%;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size:1.3rem;
+}
+.cabecera_usuario span{
+    display: flex;
+    width: 33.3%;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    background-color: rgb(212, 212, 212);
+}
+.item, .nombre , .correo {
+    display: flex;
+    width: 33.3%;
+    justify-content: center;
+    align-items: center;
+}
+/* .item {
+    display: flex;
+    width: 20%;
+    justify-content: center;
+    align-items: center;
+} */
