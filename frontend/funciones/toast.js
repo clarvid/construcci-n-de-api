@@ -1,7 +1,8 @@
+// Creacion de una funcion para una notificacion toast que se eliminara despues de 3 segundos
+
 export default function toast(mensaje, contenedor){
     const toastContenedor = document.createElement("div")
     toastContenedor.classList.add("toast")
-    // console.log(mensaje);
 
     if(mensaje === "Usuario registrado con éxito"){
         toastContenedor.innerHTML = `
@@ -21,7 +22,6 @@ export default function toast(mensaje, contenedor){
 
         <h3 class="toast__info">${mensaje}</h3>`
     }
-
     if(mensaje === "El correo ya está registrado"){
         toastContenedor.innerHTML = `
         <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none">
@@ -52,7 +52,6 @@ export default function toast(mensaje, contenedor){
 
         <h3 class="toast__info">${mensaje}</h3>`
     }
-
    
     contenedor.appendChild(toastContenedor)
     setTimeout(()=>{

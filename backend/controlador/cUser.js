@@ -1,10 +1,17 @@
 import mUser from "../modelo/mUser.js";
 
+
+// Se crea un objeto para que sus metodos sean usado en las rutas
 const cUser = {
     createUser: async (req, res)=>{
         try {
+            // Se registraran los datos que enviamos a traves del ajax
             let {nombre, correo, contrasenia} = req.body
+
+            // Se envian los datos al modelo
             await mUser.postUser({nombre, correo, contrasenia})
+
+            // Envio de respuesta al ajax
             res.status(201).json({ mensaje: "Usuario registrado con éxito" });
         } catch (error) {
             if(error.code === 409){
@@ -22,6 +29,7 @@ const cUser = {
     },
     signInUser: async (req, res)=>{
         try {
+            // Se registraran los datos que enviamos a traves del ajax
             let {correo, contrasenia} = req.body
             console.log(req.body);
             let result = await mUser.signInUser(correo)

@@ -1,5 +1,6 @@
 import db from "../config/db.js"
 
+// Peticiones a la base de datos
 const mUser = {
     postUser: async (usuario)=>{
         try {
